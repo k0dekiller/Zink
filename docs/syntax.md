@@ -331,6 +331,14 @@ a = anon@(b)
 .
 ```
 
+## Lambdas
+
+Another type of anonymous function is a lambda. Lambdas can be defined like this:
+
+```zink
+a = (x+y)<-(x, y)
+```
+
 ## Macros
 
 Macros are functions that don't need any argument. All function syntaxes are valid except the arguments, which are omitted:
