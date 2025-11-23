@@ -1202,6 +1202,10 @@ class ZinkParser(Parser):
     def expr(self, p):
         return ("lambda", p.expr, p.args)
     
+    @_("LPAREN expr RPAREN LARROW EXCLAMATION")
+    def expr(self, p):
+        return ("lambda", p.expr, [])
+    
     @_("SUPER_INIT")
     def expr(self, p):
         return ("super_init",)

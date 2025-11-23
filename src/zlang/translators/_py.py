@@ -157,7 +157,7 @@ class T(Template):
     def _not(s):                                                                    return f"not {s.wt(s.n[1])}"
     def _is(s):                                                                     return f"{s.wt(s.n[1])} is {s.wt(s.n[2])}"
     def _in(s):                                                                     return f"{s.wt(s.n[1])} in {s.wt(s.n[2])}"
-    def _lambda(s):                                                                 return f"(lambda {s.jwt(s.n[2], ", ")}: {s.wt(s.n[1])})"
+    def _lambda(s):                                                                 return f"(lambda{" " if (tmp := s.jwt(s.n[2], ", ")) else ""}{tmp}: {s.wt(s.n[1])})"
     def _decorator(s):                                                              return f"@{s.wt(s.n[1])}"
     def _slash_arg(s):                                                              return f"/"
     def _asterisk_arg(s):                                                           return f"*"
